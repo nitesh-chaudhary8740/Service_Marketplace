@@ -7,12 +7,14 @@ import Checkout from "./components/Checkout"
 import VendorOverview from "./components/Vendor/VendorOverView"
 import VendorLayout from "./components/Vendor/VendorLayout"
 import VendorSupport from "./components/Vendor/Menus/VendorSupport"
-import { VendorSchedule } from "./components/Vendor/Menus/VendorSchedule"
+// import { VendorSchedule } from "./components/Vendor/Menus/VendorSchedule"
 import { VendorPayouts } from "./components/Vendor/Menus/VendorPayouts"
 import { VendorServicePricing } from "./components/Vendor/Menus/VendorServicePricing"
 import { VendorReviews } from "./components/Vendor/Menus/VendorReviews"
 import { VendorInbox } from "./components/Vendor/Menus/VendorInbox"
 import { VendorProfile } from "./components/Vendor/Menus/VendorProfile"
+import VendorMyJobs from "./components/Vendor/Menus/VendorMyJobs"
+import VendorJobDetails from "./components/Vendor/Menus/sub_components/VendorJobDetails"
 
 
 
@@ -29,7 +31,7 @@ return (
         <Route path="/vendor" element={<VendorLayout/>}>
         <Route index element={<VendorOverview/>}/>
         <Route path="support" element={<VendorSupport/>}/>
-        <Route path="schedule" element={<VendorSchedule/>}/>
+        <Route path="my-jobs" element={<VendorMyJobs/>}/>
         <Route path="payouts" element={<VendorPayouts/>}/>
         <Route path="pricing" element={<VendorServicePricing/>}/>
         <Route path="reviews" element={<VendorReviews/>}/>
@@ -37,6 +39,7 @@ return (
         <Route path="inbox" element={<VendorInbox/>}/>
         
         </Route>
+       <Route path="/vendor/job/:id" element={<VendorJobDetails />} />
         
       </Routes>
 

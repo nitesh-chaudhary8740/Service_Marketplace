@@ -20,7 +20,7 @@ const ServiceDetailSchema = new mongoose.Schema({
 }, { _id: false });
 
 const ServiceSchema = new mongoose.Schema({
-    name: { type: String, required: true, unique: true }, 
+    serviceName: { type: String, required: true, unique: true }, 
     subcategory: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'ServiceSubcategory', 
