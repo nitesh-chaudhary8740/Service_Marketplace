@@ -2,9 +2,9 @@
 const errorHandler = (err, req, res, next) => {
     let error = { ...err };
     error.message = err.message;
-
+    console.error(`fatal error (error handler middleware.js) is: `,error.message)
     // Log for the developer
-    console.error(`Error: ${err.message}`.red);
+    // console.error(`Error: ${err.message}`.red);
 
     // Mongoose bad ObjectId
     if (err.name === 'CastError') {
@@ -20,7 +20,7 @@ const errorHandler = (err, req, res, next) => {
 
     res.status(error.statusCode || 500).json({
         success: false,
-        msg: error.message || 'Internal Server Error'
+        message: error.message || 'Internal Server Error'
     });
 };
 

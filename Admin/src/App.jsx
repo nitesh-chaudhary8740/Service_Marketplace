@@ -17,11 +17,18 @@ import Customers from "./components/Customers";
 import Disputes from "./components/Disputes";
 import Messages from "./components/Messages";
 import Support from "./components/Support";
+import ProtectedRoute from "./components/ProtectedRoute";
+import AdminLogin from "./components/AdminLogin";
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<AdminDashboard />}>
+        <Route path="/login" element={<AdminLogin />} />
+        <Route path="/" element={
+          <ProtectedRoute>
+            <AdminDashboard />
+          </ProtectedRoute>
+          }>
           <Route index element={<Overview />} />
           <Route path="services" element={<ServicesLayout />}>
             <Route index element={<ServiceList />} />

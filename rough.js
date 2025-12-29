@@ -1,2 +1,7 @@
-let a = [1,3,4] [2,0]
-console.log(a)
+function f(){console.log("f1",this)}
+// function f(){console.log("f2")}
+// f()
+const a = ()=>{
+    console.log(this)
+}
+a()

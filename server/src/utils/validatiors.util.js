@@ -55,13 +55,3 @@ const titleCaseName = name.toLowerCase().replace(
 
 
 
-export const fieldValidationsAndExtraSpaceCleanUp = (req,res,fieldWithValidationType)=>{
-      if(fieldWithValidationType.type==="name")
-      {
-        if(validators.name(fieldWithValidationType.field)){
-          const valueWithNoSpace = validators.noExtraSpaces(fieldValidationsAndExtraSpaceCleanUp.field)
-          console.log("value with no space",valueWithNoSpace)
-          return valueWithNoSpace.replace( /\b\w/g, (matched)=>matched.toUpperCase())
-        }
-      }
-}
